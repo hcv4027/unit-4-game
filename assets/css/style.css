@@ -1,0 +1,79 @@
+.crystal-image001, .crystal-image002, .crystal-image003, .crystal-image004,{
+    width: 300px;
+    height: 300px;
+    margin-left: 3px;
+}
+
+#crystal-image-row img{
+    width: 300px;
+    height: 300px;
+    
+}
+body{
+    margin:0;
+    padding:0;
+    background: url(../images/background001.jpg);
+    background-size: cover; /* See what other options there are for this. */
+}
+
+#gameName{
+    color: white;
+}
+
+#instructions{
+    background-color: lightsalmon;
+    text-align: center;
+}
+
+#targetDisplay{
+    background-color: lightgreen;
+} 
+
+#totalScore{
+    text-align: left;
+    background-color: lightgreen;
+}
+
+#statuswinloss{
+    padding-left: 2px;
+    margin-left: 2px;
+    background-color: lightblue;
+    
+}
+
+#crystalValue{
+    background-color: silver;
+    height: 120px;
+}
+
+h5 > span{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: 5em;
+    text-transform: uppercase;
+    /* letter-spacing: 3px; */
+    background: linear-gradient(#263636, #eaeaea, #262626);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h5 > span:nth-child(1){
+    z-index: 2;
+}
+
+h5 > span:nth-child(2){
+    z-index:1;
+    text-shadow: 1px 1px 0 #262626, 2px 2px 0 #262626, 3px 3px 0 #262626, 4px 4px 0 #262626, 
+    5px 5px 0 #262626, 1px 1px 0 #262626, 6px 20px 20px rgba(0,0,0,1), -1px -1px 0 #fff;
+}
+
+#totalScore{
+    width: 30%;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <title>Crystal Collector Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="assets/css/style.css" rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="container">
+        <!--This div displays the name of the game to the user.-->
+        <div class="row">
+            <div class="col-md-12">
+                <div id="gameName">
+                    <br/><br/><br/><br/>
+                    <h5> 
+                        <span>Crystal Collector!</span>
+                        <span>Crystal Collector!</span>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <br/><br/>
+        <!--This div shows the player the instructionson how to play the Crystal Collector game.-->
+        <div class="row">
+            <div class="col-md-6 offset-2" id="instructions">
+                <p>You will be given a random number at the start of the game. This will be considered your Target Number.</p>
+                <p>There are 4 crystals showing below. By clicking on a crystal, you will add a specific amount of points to your
+                    total score.
+                </p>
+                <p>You win this game by matching your total score to the Target Number mentioned above.</p>
+                <p>The value of each crystal is hiddn from you until you click on it.</p>
+                <p>Each time the game starts, the Target Number and the values of the crystals will change.</p>
+                <h4>Good Luck!</h4>
+            </div>
+        </div>
+        <br/><br/>
+        <!--This div row displays the Target Numnber and the status, wins and losses immediately to its right.-->
+        <div class="row">
+            <br/><br />
+            <div class="col-md-3 offset-2" id="targetDisplay">
+                <h1>0</h1>
+                
+            </div>
+            <div class="col-md-3" id="statuswinloss">
+                <p>Wins: 0</p>
+                <p>Losses: 0</p>
+            </div>
+        </div>
+
+        <div class="row" id="crystal-image-row">
+            <div class="crystal-image001 col-md-3">
+                <img src="assets/images/Crystal_001.jpg">
+            </div>
+            <div class="crystal-image002 col-md-3">
+                    <img src="assets/images/Crystal_002.jpg">
+            </div>
+            <div class="crystal-image003 col-md-3">
+                    <img src="assets/images/Crystal_003.jpg">
+            </div>
+            <div class="crystal-image004 col-md-3">
+                    <img src="assets/images/Crystal_004.jpg">
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-md-3 offset-2" id="totalScore">
+                <p>Your Total Score is: </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 offset-2" id="crystalValue">
+                <h1>0</h1>
+            </div>
+        </div>
+    </div> <!--END CONTAINER-->
+<script type="text/javascript" src="assets/javascript/game.js">
+</script>
+</body>
+</html>
