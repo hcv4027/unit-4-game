@@ -23,6 +23,7 @@ body{
 #instructions{
     background-color: lightsalmon;
     text-align: center;
+    border: 4px silver solid;
 }
 
 #targetDisplay{
