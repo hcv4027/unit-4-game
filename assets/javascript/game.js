@@ -21,34 +21,48 @@ var crystalimg = ["assets/images/Crystal_001.jpg", "assets/images/Crystal_002.jp
 
 //Array used to include four options, one for each crystal.
 var numberOptions = [crystal1, crystal2, crystal3, crystal4];
-console.log(numberOptions);
+
 
 //This loop add images to the crystals div and gives them css attributes.
 for(var i = 0; i < numberOptions.length; i++)
 {
-    
+    //For each iteration of the for loop above, we create a new instance of imageCrystal.
     var imageCrystal = $("<img>");
 
+    //This adds the crystal-image class to all 4 images that will be generated from the crystaimg array.
     imageCrystal.addClass("crystal-image");
 
+    //This line changes the src of each of the 4 images to the paths defined in the crystalimg array.
     imageCrystal.attr("src", crystalimg[i]);
 
+    //This line sets the value of the images loaded to the random number generated above.
     imageCrystal.attr("data-crystalvalue", numberOptions[i]);
 
+    //Adds the crystal image to the page.
     $('#crystals').append(imageCrystal);
     
 }
 
+//Function fires when one of the crystals created above is clicked.
 $(".crystal-image").on("click", function()
 {
+    //Use of the this keyword here means pulling out the crystal value of the crystal that is clicked.
     var crystalValue = ($(this).attr("data-crystalvalue"));
+
+    //The parsing below is done to convert the text value into an integer, as it starts out as a string.
     crystalValue = parseInt(crystalValue);
+
+    //The parsed value is then added to the counter, and the the display is cleared and the new value 
+    //is shown to the player and added to their total score.
     counter += crystalValue;
     $("#crystalValue").empty();
     $("#crystalValue").append("<h1>" +  crystalValue + "</h1> points added");
 
     $("#totalScore").empty();
     $("#totalScore").append("Total score is: "+ counter);
+
+    //If the player matches the value, the win logic below is performed, otherwise the loss logic takes over.
+    //In either case the player is asked to confirm if they would like to play again.
     if(counter === targetNumber) 
     {
         wins++;
@@ -61,6 +75,7 @@ $(".crystal-image").on("click", function()
         loss++;
         alert("YOU LOSE!!");
         $("#statuswinloss").append("Losses: "+ loss);
+        //Try the above with .text too!
         overStart();
 
     }
