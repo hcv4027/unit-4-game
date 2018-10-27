@@ -35,13 +35,28 @@ body{
     background-color: lightgreen;
 }
 
-#statuswinloss{
+/* #statuswinloss{
     padding-left: 2px;
     margin-left: 2px;
     background-color: lightblue;
     
+} */
+
+#winstatus{
+    height: 28px;
+    padding-left: 2px;
+    margin-left: 2px;
+    background-color: lightblue;
+    text-align: center;
 }
 
+#lossstatus{
+    height: 28px;
+    padding-left: 2px;
+    margin-left: 2px;
+    background-color: peru;
+    text-align: center;
+}
 #crystalValue{
     background-color: silver;
     height: 120px;
@@ -77,4 +92,5 @@ h5 > span:nth-child(2){
 
 #totalScore{
     width: 30%;
+    font-size: 22px;
 }

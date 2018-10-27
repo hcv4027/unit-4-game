@@ -1,6 +1,7 @@
 //Variable to hold the Target Number string that the player is trying to reach while playing Crystal Collector
 var targetNumberText = $('#targetDisplay');
 
+
 //Generates a random number between 19 and 120.
 var targetNumber = Math.floor(Math.random() *102) + 19;
 console.log("Your target number is: "+targetNumber);
@@ -21,6 +22,8 @@ var crystalimg = ["assets/images/Crystal_001.jpg", "assets/images/Crystal_002.jp
 
 //Array used to include four options, one for each crystal.
 var numberOptions = [crystal1, crystal2, crystal3, crystal4];
+var keeper = numberOptions.length;
+/* TAKE OUT */console.log(keeper);
 
 
 //This loop add images to the crystals div and gives them css attributes.
@@ -66,20 +69,22 @@ $(".crystal-image").on("click", function()
     if(counter === targetNumber) 
     {
         wins++;
-        alert("YOU WIN!");
-        $("#statuswinloss").append("Wins: "+ wins);
-        overStart();
+        $("#totalScore").empty();
+        $("#winstatus").append("<strong>Wins: </strong>"+ wins);
+        setTimeout("alert('YOU WIN!')", 1000);
+        setTimeout(overStart(), 2000);
     }
     else if (counter >= targetNumber)
     {
         loss++;
-        alert("YOU LOSE!!");
-        $("#statuswinloss").append("Losses: "+ loss);
-        //Try the above with .text too!
-        overStart();
+        $("#totalScore").empty();
+        $("#lossstatus").append("<strong>Losses:</strong> "+ loss);
+        setTimeout("alert('Loser!!')", 1000);
+        setTimeout(overStart(), 2000);
 
     }
 });
+
 
 function overStart()
 {
@@ -88,10 +93,34 @@ function overStart()
     {
         alert("Restart");
         $("#totalScore").empty();
+        $("#crystalValue").empty();
+        var targetNumber = Math.floor(Math.random() *102) + 19;
+        $("#targetDisplay").empty();
+        $('#targetDisplay').append("<h1>"+targetNumber+ "</h1>");
         counter = 0;
+        console.log(numberOptions);
+        popper(numberOptions);
+        pusher(keeper, numberOptions);
+        console.log(numberOptions);
     }
     else
     {
         alert("Thank you for playing!!!")
     }
-}
+};
+
+function popper(ra)
+{
+    for(var i = ra.length; i != 0 ; i--)
+    {
+        ra.pop();
+        console.log("RA: " +ra);
+    }
+};
+
+function pusher(keeper, ra)
+{
+    for(var k = 0; k < keeper; k++)
+    ra.push((Math.floor(Math.random() * 12) +1));
+    console.log("PUSHED RA: " + ra);
+};
