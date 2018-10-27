@@ -101,13 +101,19 @@ function overStart()
         console.log(numberOptions);
         popper(numberOptions);
         pusher(keeper, numberOptions);
-        console.log(numberOptions);
+        updateImageValues();
     }
     else
     {
         alert("Thank you for playing!!!")
     }
 };
+
+function updateImageValues() {
+    $(".crystal-image").each(function(idx) {
+        $(this).attr("data-crystalvalue", numberOptions[idx]);
+    });
+}
 
 function popper(ra)
 {
